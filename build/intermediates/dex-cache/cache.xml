@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="D:\Android\IMDbouteraa\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="7f8a248910f52006a85495ff09c945ae308708e5">
+        <dex dex="D:\Android\IMDbouteraa\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_6e3fbfc0bb0bc1a23515abb37cb1610721d9a79d\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Félix\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.3.0\bcacde6a8ccedcc56c127403d26b76072fe6214d\retrofit-2.3.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="bcacde6a8ccedcc56c127403d26b76072fe6214d">
+        <dex dex="D:\Android\IMDbouteraa\app\build\intermediates\pre-dexed\debug\retrofit-2.3.0_015f8d41cf1d985c64e658b6f41537a1b3984580.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Félix\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.3.0\9e09011e9767bb76b5e27c9b8223476b93b14631\converter-gson-2.3.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="9e09011e9767bb76b5e27c9b8223476b93b14631">
+        <dex dex="D:\Android\IMDbouteraa\app\build\intermediates\pre-dexed\debug\converter-gson-2.3.0_c0e2394b42192e6a78cb5e3e916a76d5967ddec1.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\IMDbouteraa\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="D:\Android\IMDbouteraa\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_08fc4be35231226dfff3d0c23fc87f3abcd30546\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Félix\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="D:\Android\IMDbouteraa\app\build\intermediates\pre-dexed\debug\picasso-2.5.2_cceb3e38796fa583e633e679692cad2118da6881.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Félix\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.8.0\5a11f020cce2d11eb71ba916700600e18c4547e7\okhttp-3.8.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="5a11f020cce2d11eb71ba916700600e18c4547e7">
+        <dex dex="D:\Android\IMDbouteraa\app\build\intermediates\pre-dexed\debug\okhttp-3.8.0_bb8b6e6d51a330d0a99282eea8a6006c98fdac7a.jar" />
+    </item>
+
+</items>

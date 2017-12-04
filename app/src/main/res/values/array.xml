@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="fanart_string">
+        <item>original</item>
+        <item>w780</item>
+        <item>w300</item>
+        <item>w1280</item>
+    </string-array>
+    <string-array name="fanart_values">
+        <item>original</item>
+        <item>w780</item>
+        <item>w300</item>
+        <item>w1280</item>
+    </string-array>
+    <string-array name="jaquette_string">
+        <item>original</item>
+        <item>w500</item>
+        <item>w154</item>
+        <item>w185</item>
+        <item>w92</item>
+        <item>original</item>
+        <item>w780</item>
+        <item>w342</item>
+    </string-array>
+    <string-array name="jaquette_values">
+        <item>original</item>
+        <item>w500</item>
+        <item>w154</item>
+        <item>w185</item>
+        <item>w92</item>
+        <item>original</item>
+        <item>w780</item>
+        <item>w342</item>
+    </string-array>
+    <string-array name="picture_profil_string">
+        <item>w45</item>
+        <item>w185</item>
+        <item>original</item>
+        <item>h632</item>
+    </string-array>
+    <string-array name="picture_profil_values">
+        <item>w45</item>
+        <item>w185</item>
+        <item>original</item>
+        <item>h632</item>
+    </string-array>
+
+    <string-array name="languages">
+        <item>French</item>
+        <item>English</item>
+    </string-array>
+
+    <string name="languages">French</string>
+</resources>

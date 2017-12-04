@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="fr.bouteraa.imdbouteraa.SettingsActivity"
+    tools:layout_editor_absoluteY="81dp"
+    tools:layout_editor_absoluteX="0dp">
+
+
+    <TextView
+        android:id="@+id/quality"
+        android:layout_width="322dp"
+        android:layout_height="33dp"
+        android:allowUndo="false"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:selectAllOnFocus="false"
+        android:text="Qualité des images"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/SP_lang"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/general"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:allowUndo="false"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:selectAllOnFocus="false"
+        android:text="Général"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Spinner
+        android:id="@+id/SP_lang"
+        android:layout_width="306dp"
+        android:layout_height="34dp"
+        android:dropDownWidth="match_parent"
+        android:entries="@array/languages"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/general"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintHorizontal_bias="0.442" />
+
+    <RadioGroup
+        android:id="@+id/RB_jaquette"
+        android:layout_width="95dp"
+        android:layout_height="195dp"
+        android:layout_marginTop="13dp"
+        android:contentDescription="Jaquette"
+        android:longClickable="true"
+        android:weightSum="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quality"
+        tools:longClickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintVertical_bias="0.126">
+
+        <TextView
+            android:id="@+id/TV_jaquette"
+            android:layout_width="86dp"
+            android:layout_height="34dp"
+            android:text="Jaquette" />
+
+        <RadioButton
+            android:id="@+id/jaquette_w92"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="w92" />
+
+        <RadioButton
+            android:id="@+id/jaquette_w185"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:text="w185" />
+
+        <RadioButton
+            android:id="@+id/jaquette_original"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="original" />
+
+        <RadioButton
+            android:id="@+id/jaquette_w780"
+            android:layout_width="fill_parent"
+            android:layout_height="18dp"
+            android:text="w780" />
+
+        <RadioButton
+            android:id="@+id/jaquette_w342"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="w342" />
+
+        <RadioButton
+            android:id="@+id/jaquette_w500"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="w500" />
+
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/RB_profile_picture"
+        android:layout_width="89dp"
+        android:layout_height="188dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="35dp"
+        android:contentDescription="Jaquette"
+        android:longClickable="true"
+        android:weightSum="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toRightOf="@+id/RB_jaquette"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:longClickable="true"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintVertical_bias="0.539">
+
+        <TextView
+            android:id="@+id/TV_picture_profil"
+            android:layout_width="86dp"
+            android:layout_height="34dp"
+            android:text="Photo de profil" />
+
+        <RadioButton
+            android:id="@+id/picture_profil_w145"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="w145" />
+
+        <RadioButton
+            android:id="@+id/picture_profil_h632"
+            android:layout_width="fill_parent"
+            android:layout_height="42dp"
+            android:text="h632" />
+
+        <RadioButton
+            android:id="@+id/picture_profil_w45"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="w45" />
+
+        <RadioButton
+            android:id="@+id/picture_profil_original"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="original" />
+
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/RB_fanart"
+        android:layout_width="97dp"
+        android:layout_height="170dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="35dp"
+        android:contentDescription="Fanart"
+        android:longClickable="true"
+        android:weightSum="1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/RB_jaquette"
+        tools:longClickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="171dp">
+
+        <TextView
+            android:id="@+id/TV_fanart"
+            android:layout_width="62dp"
+            android:layout_height="34dp"
+            android:text="Fanart" />
+
+        <RadioButton
+            android:id="@+id/fanart_w300"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="w300" />
+
+        <RadioButton
+            android:id="@+id/fanart_w780"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="w780" />
+
+        <RadioButton
+            android:id="@+id/fanart_w1280"
+            android:layout_width="fill_parent"
+            android:layout_height="128dp"
+            android:layout_weight="4.63"
+            android:text="w1280" />
+
+        <RadioButton
+            android:id="@+id/fanart_original"
+            android:layout_width="fill_parent"
+            android:layout_height="21dp"
+            android:text="original" />
+
+        <RadioButton
+            android:id="@+id/jaquette_w154"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="w154" />
+    </RadioGroup>
+
+</android.support.constraint.ConstraintLayout>
