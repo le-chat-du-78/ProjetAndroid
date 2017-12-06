@@ -2,17 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation"
+        android:id="@+id/liste"
         android:icon="@drawable/ic_view_list_black_24dp"
         android:title="Liste" />
 
     <item
-        android:id="@+id/navigation_litle"
+        android:id="@+id/images"
         android:icon="@drawable/ic_view_carousel_black_24dp"
         android:title="Images" />
 
     <item
-        android:id="@+id/navigation_big"
+        android:id="@+id/description"
         android:icon="@drawable/ic_description_black_24dp"
         android:title="Description" />
 

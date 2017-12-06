@@ -7,5 +7,5 @@ package fr.bouteraa.imdbouteraa.utils;
 public class Constants {
 
     public static final String BASE_URL = "http://api.themoviedb.org/3/";
-    public static String API_KEY = "0a9f09da311611a5e630936f6263622b";
+    public static String API_KEY = "f7ebdce18f46c56c4f6109af33d78c2a";
 }

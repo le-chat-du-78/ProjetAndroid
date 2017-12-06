@@ -1,12 +1,11 @@
 package fr.bouteraa.imdbouteraa;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -19,17 +18,15 @@ import android.widget.Toast;
 
 import java.util.List;
 
-import fr.bouteraa.imdbouteraa.*;
-import fr.bouteraa.imdbouteraa.models.Movie;
-import fr.bouteraa.imdbouteraa.service.ApiService;
 import fr.bouteraa.imdbouteraa.models.Movie;
 import fr.bouteraa.imdbouteraa.service.ApiServiceImpl;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    /*SharedPreferences favorites = getSharedPreferences("favorites", 0); */
     ApiServiceImpl apiService = new ApiServiceImpl();
+    public String affichage;
+    private List<Movie> movies;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +44,10 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        getPopularMovies();
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation_bottom);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        getPopularMovies("liste");
     }
 
     @Override
@@ -60,12 +60,74 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    @SuppressWarnings("StatementWithEmptyBody")
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        // Handle navigation view item clicks here.
+        int id = item.getItemId();
+
+        if (id == R.id.nav_films) {
+
+        } else if (id == R.id.nav_series) {
+            Toast.makeText(MainActivity.this, "test", Toast.LENGTH_SHORT).show();
+
+        } else if (id == R.id.nav_settings) {
+            Intent intent = new Intent(this, SettingsActivity.class);
+            startActivity(intent);
+            return true;
+        }
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
+
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+            switch (item.getItemId()) {
+                case R.id.liste:
+                    affichage="liste";
+                    getPopularMovies(affichage);
+                    return true;
+                case R.id.images:
+                    affichage="images";
+                    getPopularMovies(affichage);
+                    return true;
+                case R.id.description:
+                    affichage="description";
+                    getPopularMovies(affichage);
+                    return true;
+                case R.id.nav_films:
+                    Toast.makeText(MainActivity.this, "test", Toast.LENGTH_SHORT).show();
+
+
+                    drawer.closeDrawer(GravityCompat.START);
+                    return true;
+                case R.id.nav_series:
+
+
+                    drawer.closeDrawer(GravityCompat.START);
+                    return true;
+                case R.id.nav_settings:
+
+
+                    drawer.closeDrawer(GravityCompat.START);
+                    return true;
+            }
+            return false;
+        }
+    };
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -82,20 +144,11 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    public void getPopularMovies() {
+    public void getPopularMovies(final String affichage) {
         apiService.getPopularMovies(new ApiServiceImpl.CustomCallBack<Movie>() {
             @Override
             public void onSuccess(List<Movie> movies) {
-                //DO YOUR JOB
-
-                RecyclerView RV_movies = (RecyclerView) findViewById(R.id.RV_movies);
-
-                LinearLayoutManager layoutManager = new LinearLayoutManager(MainActivity.this);
-                RV_movies.setLayoutManager(layoutManager);
-
-                MovieAdapter userAdapter = new MovieAdapter(getApplicationContext(), movies);
-
-                RV_movies.setAdapter(userAdapter);
+                afficher(affichage, movies);
 
             }
 
@@ -106,46 +159,25 @@ public class MainActivity extends AppCompatActivity
         });
     }
 
+    public void afficher(String affichage, List<Movie> movies) {
 
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
+        RecyclerView RV_movies = (RecyclerView) findViewById(R.id.RV_movies);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(MainActivity.this);
+        RV_movies.setLayoutManager(layoutManager);
 
-        if (id == R.id.nav_films) {
-            Toast.makeText(MainActivity.this, "test", Toast.LENGTH_SHORT).show();
-            apiService.getPopularMovies(new ApiServiceImpl.CustomCallBack<Movie>() {
-                @Override
-                public void onSuccess(List<Movie> movies) {
-                    //DO YOUR JOB
-
-                    RecyclerView RV_movies = (RecyclerView) findViewById(R.id.RV_movies);
-
-                    LinearLayoutManager layoutManager = new LinearLayoutManager(MainActivity.this);
-                    RV_movies.setLayoutManager(layoutManager);
-
-                    MovieAdapter movieAdapter = new MovieAdapter(getApplicationContext(), movies);
-
-                    RV_movies.setAdapter(movieAdapter);
-
-                }
-
-                @Override
-                public void onError(String message) {
-                    Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
-                }
-            });
-        } else if (id == R.id.nav_series) {
-            Toast.makeText(MainActivity.this, "series", Toast.LENGTH_SHORT).show();
-
-        } else if (id == R.id.nav_settings) {
-            Intent intent = new Intent(this, SettingsActivity.class);
-            startActivity(intent);
-            return true;
+        if (affichage == "liste"){
+            MovieAdapterListe listeAdapter = new MovieAdapterListe(getApplicationContext(), movies);
+            RV_movies.setAdapter(listeAdapter);
+        }else if(affichage == "images"){
+            MovieAdapterImages imageAdapter = new MovieAdapterImages(getApplicationContext(), movies);
+            RV_movies.setAdapter(imageAdapter);
         }
+        else if(affichage == "description"){
+            MovieAdapterDescription descriptionAdapter = new MovieAdapterDescription(getApplicationContext(), movies);
+            RV_movies.setAdapter(descriptionAdapter);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
+        }
     }
+
+
 }

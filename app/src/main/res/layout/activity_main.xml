@@ -54,7 +54,7 @@
         </android.support.v7.widget.RecyclerView>
 
         <android.support.design.widget.BottomNavigationView
-            android:id="@+id/navigation"
+            android:id="@+id/navigation_bottom"
             android:layout_width="260dp"
             android:layout_height="46dp"
             android:foregroundGravity="bottom"
